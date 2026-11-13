@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "hac/chart",
+  "title": "Data chart",
+  "category": "hac-research",
+  "icon": "chart-bar",
+  "description": "A bar or stacked chart made from a pasted table. Every chart gets a text description and a data table.",
+  "keywords": ["chart", "graph", "data", "infographic"],
+  "textdomain": "hac-research-blocks",
+  "attributes": {
+    "title": { "type": "string", "default": "" },
+    "description": { "type": "string", "default": "" },
+    "chartType": { "type": "string", "default": "bar" },
+    "data": { "type": "string", "default": "Label\tValue\nA\t10\nB\t20" },
+    "unit": { "type": "string", "default": "" },
+    "source": { "type": "string", "default": "" },
+    "sort": { "type": "boolean", "default": false }
+  },
+  "supports": { "html": false, "align": ["wide"], "anchor": true },
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

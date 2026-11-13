@@ -1,0 +1,30 @@
+.hac-chart{margin:2rem 0;padding:1.25rem;border:1px solid #d9dedb;border-radius:6px;background:#fff;color:#1d2321}
+.hac-chart__head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}
+.hac-chart__title{margin:0!important;font-size:1.1rem!important;line-height:1.3;font-weight:700!important}
+.hac-chart__series{display:inline-flex;border:1px solid #d9dedb;border-radius:4px;overflow:hidden}
+.hac-chart__series button{font:inherit;font-size:.85rem;border:0;background:#fff;padding:.3rem .7rem;cursor:pointer;color:#3b4441}
+.hac-chart__series button[aria-pressed="true"]{background:#1f5f74;color:#fff}
+.hac-chart__plot{overflow-x:auto}
+.hac-chart__plot svg{display:block;width:100%;height:auto}
+.hac-chart--bar .hac-chart__plot svg{min-width:34rem}
+.hac-chart__bar{fill:#e9b54a}
+.hac-chart--stacked .hac-chart__bar{fill:#1f5f74}
+.hac-chart__bar:hover,.hac-chart__bar:focus{fill:#a6442a;outline:none}
+.hac-chart__rest{fill:#e4e8e5}
+.hac-chart__grid{stroke:#e6e9e7}
+.hac-chart__axis{stroke:#8a948f}
+.hac-chart__tick{font-size:11px;fill:#3b4441}
+.hac-chart__lab,.hac-chart__val{font-size:14px;fill:#1d2321}
+.hac-chart__val{font-weight:700}
+.hac-chart__source{font-size:.88rem;color:#5b6561;margin-top:.6rem}
+.hac-chart__data{margin-top:.6rem}
+.hac-chart__data summary{cursor:pointer;font-weight:600;color:#164a5b;font-size:.92rem}
+.hac-chart__tablewrap{overflow:auto;max-height:24rem;margin-top:.5rem;border:1px solid #d9dedb}
+.hac-chart table{border-collapse:collapse;width:100%;font-size:.9rem;margin:0}
+.hac-chart caption{text-align:left;font-weight:600;padding:.5rem .6rem}
+.hac-chart th,.hac-chart td{padding:.35rem .6rem;border-bottom:1px solid #d9dedb;text-align:right;white-space:nowrap}
+.hac-chart th:first-child,.hac-chart td:first-child{text-align:left}
+.hac-chart thead th{position:sticky;top:0;background:#f4f6f3}
+.hac-chart-editor{border:1px dashed #b9c2bd;padding:1rem;border-radius:6px;background:#fbfcfb}
+.hac-chart-editor__data textarea{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.hac-chart-editor__label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#5b6561;margin:1rem 0 .25rem}
