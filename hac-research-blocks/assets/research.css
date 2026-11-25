@@ -1,13 +1,39 @@
+/* HAC colors, from ruralhome.org */
+:root{--hac-blue:#034564;--hac-yellow:#f2b92a;--hac-tint:#eef4f7;--hac-yellow-tint:#fcefcb}
+
 /* Research brief patterns */
-.hac-kicker{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem!important;font-weight:700;color:#164a5b}
+.hac-kicker{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem!important;font-weight:700;color:var(--hac-blue)}
 .hac-meta{color:#5b6561;font-size:.95rem}
-.hac-findings{background:#f4f6f3;border-left:4px solid #1f5f74;padding:1.25rem 1.5rem!important}
-.hac-findings h2{font-size:1rem!important;text-transform:uppercase;letter-spacing:.06em;color:#164a5b;margin-top:0!important}
+.hac-findings{background:var(--hac-tint);border-left:4px solid var(--hac-yellow);padding:1.25rem 1.5rem!important}
+.hac-findings h2{font-size:1rem!important;text-transform:uppercase;letter-spacing:.06em;color:var(--hac-blue);margin-top:0!important}
 .hac-stats{gap:1px!important;background:#d9dedb;border:1px solid #d9dedb}
 .hac-stats > .wp-block-group{background:#fff;padding:1rem 1.1rem!important}
-.hac-stat-num{font-size:2rem!important;font-weight:700;line-height:1.1!important;margin:0!important}
+.hac-stat-num{font-size:2rem!important;font-weight:700;line-height:1.1!important;margin:0!important;color:var(--hac-blue)}
 .hac-stat-label{font-size:.92rem!important;color:#5b6561;margin:.3rem 0 0!important}
 .hac-notes{font-size:.92rem}
-.hac-concept{background:#1d2321;color:#f1f3f1;font:400 14px/1.45 system-ui,sans-serif;padding:.55rem 1.25rem;text-align:center}
-.hac-concept a{color:#f1f3f1}
+
+/* Site header and footer in HAC blue */
+.wp-site-blocks > header.wp-block-template-part{background:var(--hac-blue);border-bottom:4px solid var(--hac-yellow)}
+.wp-site-blocks > header.wp-block-template-part a,
+.wp-site-blocks > header.wp-block-template-part .wp-block-site-title,
+.wp-site-blocks > header.wp-block-template-part .wp-block-navigation{color:#fff}
+.wp-site-blocks > footer.wp-block-template-part{background:var(--hac-tint);border-top:4px solid var(--hac-yellow)}
+
+/* Concept notice under the toolbar */
+.hac-concept{background:var(--hac-yellow-tint);color:var(--hac-blue);font:400 14px/1.45 system-ui,sans-serif;padding:.55rem 1.25rem;text-align:center}
+.hac-concept a{color:var(--hac-blue);font-weight:600}
+
+/* "Try the editor" pointer on the brief */
+.hac-try{background:var(--hac-blue);color:#fff;border-radius:6px;padding:1rem 1.25rem!important;margin-block:0 2rem!important}
+.hac-try p{margin:0!important}
+.hac-try__title{font-weight:700;color:var(--hac-yellow);margin-bottom:.3rem!important}
+.hac-try__text{font-size:.95rem;line-height:1.5}
+.hac-try__key{display:inline-block;background:var(--hac-yellow);color:var(--hac-blue);font-weight:700;padding:0 .45em;border-radius:3px;white-space:nowrap}
+
+/* The "Edit Post" button in the toolbar, in HAC yellow to match */
+#wpadminbar #wp-admin-bar-edit > .ab-item{background:var(--hac-yellow)!important;color:var(--hac-blue)!important;font-weight:600}
+#wpadminbar #wp-admin-bar-edit > .ab-item:before{color:var(--hac-blue)!important}
+#wpadminbar #wp-admin-bar-edit:hover > .ab-item,
+#wpadminbar #wp-admin-bar-edit > .ab-item:focus{background:#fff!important}
+
 .screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}

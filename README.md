@@ -15,7 +15,7 @@ It runs WordPress entirely in your browser (WordPress Playground). Nothing you c
 ## Try it
 
 1. Open the link above. You land on the brief.
-2. Use "Open this brief in the editor" in the top bar.
+2. Click "Edit Post" (in yellow) in the black toolbar at the top of the page. A note at the top of the brief points to it.
 3. Click a chart and edit its data, or add a new one: type `/chart` in an empty paragraph.
 4. Start a new post and insert the "Research brief (full template)" pattern.
 

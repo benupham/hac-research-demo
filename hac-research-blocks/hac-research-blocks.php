@@ -2,7 +2,7 @@
 /**
  * Plugin Name: HAC Research Blocks (concept)
  * Description: Concept for the Housing Assistance Council website RFP: a data chart block and research-brief patterns, with a sample brief. Prepared by Ben Upham; not an official HAC plugin.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Requires at least: 6.5
  * Author: Ben Upham
  * Author URI: https://benupham.com
@@ -32,8 +32,41 @@ add_action( 'init', function () {
 } );
 
 add_action( 'enqueue_block_assets', function () {
-	wp_enqueue_style( 'hac-research', HAC_RB_URL . 'assets/research.css', array(), '0.1.0' );
+	wp_enqueue_style( 'hac-research', HAC_RB_URL . 'assets/research.css', array(), '0.2.0' );
 } );
+
+/** HAC's blue and yellow, from ruralhome.org, applied to the theme's links, headings and buttons. */
+add_filter( 'wp_theme_json_data_theme', function ( $theme_json ) {
+	return $theme_json->update_with( array(
+		'version' => 3,
+		'styles'  => array(
+			'elements' => array(
+				'link'    => array( 'color' => array( 'text' => '#034564' ) ),
+				'heading' => array( 'color' => array( 'text' => '#034564' ) ),
+				'button'  => array(
+					'color'  => array( 'background' => '#f2b92a', 'text' => '#034564' ),
+					':hover' => array( 'color' => array( 'background' => '#034564', 'text' => '#ffffff' ) ),
+				),
+			),
+		),
+	) );
+} );
+
+/** On the brief itself, a pointer to the "Edit Post" button in the toolbar. */
+add_filter( 'the_content', function ( $content ) {
+	$id = hac_rb_demo_id();
+	if ( is_admin() || ! $id || ! is_singular( 'post' ) || get_the_ID() !== $id || doing_filter( 'get_the_excerpt' ) || ! current_user_can( 'edit_post', $id ) ) {
+		return $content;
+	}
+	$tip = '<aside class="hac-try" aria-label="' . esc_attr__( 'Try the editor', 'hac-research-blocks' ) . '">'
+		. '<p class="hac-try__title">' . esc_html__( 'See how HAC staff would edit this brief', 'hac-research-blocks' ) . '</p>'
+		. '<p class="hac-try__text">' . sprintf(
+			/* translators: %s: the "Edit Post" button label. */
+			esc_html__( 'Click %s in the black bar at the top of the page. The brief opens in the WordPress editor, where each chart is a block: click one, paste in a new table and it redraws.', 'hac-research-blocks' ),
+			'<span class="hac-try__key">' . esc_html__( 'Edit Post', 'hac-research-blocks' ) . '</span>'
+		) . '</p></aside>';
+	return $tip . $content;
+}, 20 );
 
 /** Concept notice on every front-end page. */
 add_action( 'wp_body_open', function () {
