@@ -24,7 +24,7 @@
 .hac-concept a{color:var(--hac-blue);font-weight:600}
 
 /* "Try the editor" pointer on the brief */
-.hac-try{background:var(--hac-blue);color:#fff;border-radius:6px;padding:1rem 1.25rem!important;margin-block:0 2rem!important}
+.hac-try{box-sizing:border-box;background:var(--hac-blue);color:#fff;border-radius:6px;padding:1rem 1.25rem!important;margin-block:0 2rem!important}
 .hac-try p{margin:0!important}
 .hac-try__title{font-weight:700;color:var(--hac-yellow);margin-bottom:.3rem!important}
 .hac-try__text{font-size:.95rem;line-height:1.5}
